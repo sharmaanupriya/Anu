@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My App</title>
+    <script src="/eel.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="overlay-content">
+            <h1 class="system-name">Laser Power Density Exposer System</h1>
+            <a href="#"><img id="logo" src="images/logo.png" alt="Logo"></a>
+            <h2>Specialise Products Pvt Ltd.</h2>
+            <p>B 502, EkLVYA CHSL, PLOT 69 D/J/K, SECTOR 21, KHARGHAR, NAVI MUMBAI, MAHARASHTRA - 410210 INDIA </p>
+           <P>
+            <img src="images/Call.png" alt="Call Icon" class="image-with-margin">+91 9323192750 &nbsp;&nbsp;
+            <img src="images/Email.png" alt="Email Icon" class="image-with-margin">mridulverma@specialiseproducts.com  
+           </P>
+           <!-- <P>
+            <img src="images/Call-light.png" alt="Call Icon" class=" light-mode-image">+91 9323192750 &nbsp;&nbsp;
+            <img src="images/Email-light.png" alt="Email Icon" class="light-mode-image">mridulverma@specialiseproducts.com  
+            </P>         -->
+           <button id="toggleButton" onclick="toggleMode()" class="dark-light-icon">
+            <img id="modeIcon" src="dark-mode-icon.png" alt="Dark Mode Icon">
+          </button>          
+        </div>
+    </div>
+    <!-- Create a hidden overlay for the second page -->
+    <div id="secondPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div id="secondPage">
+                <button id="homeButton" onclick="goHome()" class="home-icon">
+                    <img src="images/Home.png" alt="home Icon" />
+                    Home Button
+                </button>
+                <p id="goHome" style="display: none;">Machine is going to Home...</p>
+                <button id="comSetting" onclick="goToSetting()" class="setting-icon">
+                    <img src="images/Settings.png" alt="setting Icon" />
+                    COM Setting
+                </button>
+                <button id="terminalSetting" onclick="goToTerminalPage()" class="terminal-icon">
+                    <img src="images/Terminal.png" alt="terminal Icon" />
+                    Terminal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the setting page -->
+    <div id="settingPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 id="settingsTitle">COM Settings</h1>
+            <div id="settingPage">
+                <div class="setting-controls">
+                    <label for="comPortDropdown">Available COM Port:</label>
+                    <select id="comPortDropdown">
+                        <!-- Populate the COM port options dynamically if needed -->
+                        <option value="">Select COM Port</option>
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                </div>
+                <div class="setting-controls">
+                    <label for="baudRateDropdown">Baud Rate:</label>
+                    <select id="baudRateDropdown">
+                        <!-- Populate the Baud Rate options dynamically if needed -->
+                        <option value="">Select Baud Rate</option>
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                </div>
+                <button id="connectDisconnectButton" onclick="connectDisconnect()">Connect</button>
+                <button id="refreshButton" onclick="refreshCOMPorts()">Refresh</button>
+                <button id="terminal-close-button" onclick="closeSettingPage()">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+         <!-- Create a hidden overlay for the setting page -->
+    <div id="terminalPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 id="terminalTitle">Terminal</h1>
+            <div id="terminal">
+                <textarea id="data-display" readonly></textarea>
+                <input type="text" id="ack-input" placeholder="Enter Acknowledgment" class="mmInput">
+                <button onclick="sendAck()">Send Acknowledgment</button>
+                <button id="close-button" onclick="closeTerminalPage()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the third page -->
+    <div id="thirdPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div id="thirdPage">
+                <h1 class="custom-h1-1">Homing Done</h1>
+                <div class="input-container-currentP">
+                    <label>Current Position:</label>
+                    <span>0.0 mm</span>
+                </div>
+                <button id="backToSecondPageButton" class="back-button" onclick="backToSecondPage()">Previous </button>
+                <button id="goToFourthPageButton" class="Next-button" onclick="goToFourthPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    <!-- Create a hidden overlay for the Fourth page -->
+    <div id="fourthPageOverlay" class="overlay">
+        <div class="overlay-content">
+            <div id="fourthPage">
+                <h1 id="focusTitel">Focus</h1>
+                <div class="input-container-focus">
+                    <label for="diameterInput">Focus Position (mm):</label>
+                    <div class="input-box">
+                        <input type="text" id="diameterInput" name="diameterInput"
+                            placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputf">
+                        <div id="validationMessage"></div>
+                    </div>
+                </div>
+                <button id="backToThirdPageButton" class="back-button" onclick="backToThirdPage()">Previous</button>
+                <button id="goToFifthPageButton" class="Next-button" onclick="goToFifthPage()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- code foe dialog box -->
+    <div id="customDialog" class="custom-dialog">
+        <div class="dialog-content">
+            <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+            <h2 class="dialog-title">Input is not valid</h2>
+            <p class="dialog-message">Please correct the input before proceeding.</p>
+            <button id="confirmDialog" class="dialog-confirm-button" onclick="closeCustomDialog()">OK</button>
+        </div>
+    </div>
+
+    <!--Create a Hidden overlay for the fifth page -->
+    <div id="fifthPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div id="fifthPage">
+                <h1 id="setParameter">Set Parameters</h1>
+                <div class="input-container">
+                    <!-- Input container for Laser Spot Diameter -->
+                    <div class="input-containerlaser">
+                        <label for="diameterInput2">Laser Spot Diameter (mm):</label>
+                        <div class="input-box">
+                            <input type="text" id="diameterInput2" name="diameterInput2"
+                                placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputB">
+                            <div id="validationMessage2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Input container for Laser Current -->
+                    <div class="input-containerlaserC">
+                        <label for="currentInput">Laser Current:</label>
+                        <div class="input-box">
+                            <input type="text" id="currentInput" name="currentInput"
+                                placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputB">
+                            <div id="validationMessage3"></div>
+                        </div>
+                    </div>
+
+                    <!-- Input container for Laser Density -->
+                    <div class="input-containerlaserD">
+                        <label for="currentInput2">Laser Density:</label>
+                        <div class="input-box">
+                            <input type="text" id="currentInput2" name="currentInput2"
+                                placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputB">
+                            <div id="validationMessage4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Input container for Object Height -->
+                    <div class="input-containerheight">
+                        <label for="diameterInput3">Object Height (mm):</label>
+                        <div class="input-box">
+                            <input type="text" id="diameterInput3" name="diameterInput3"
+                                placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputB">
+                            <div id="validationMessage5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons for navigation -->
+                <button id="backToFourthPageButton" class="back-button" onclick="backToFourthPage()">Previous</button>
+                <button id="startSixthPageButton" class="Next-button" onclick="goToSixthPage()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- code foe dialog box -->
+    <div id="customDialog" class="custom-dialog">
+        <div class="dialog-content">
+            <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+            <h2 class="dialog-title">Input is not valid</h2>
+            <p class="dialog-message">Please correct the input before proceeding.</p>
+            <button id="confirmDialog" class="dialog-confirm-button" onclick="closeCustomDialog()">OK</button>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the sixth page -->
+    <div id="sixthPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 id="setTimer">Set Laser Exposer Time</h1>
+            <div class="input-containertime">
+                <!-- <label for="Input">Set Laser Exposer Time:</label> -->
+                <div>
+                    <label for="hours">Hours: </label>
+                    <div class="input-box">
+                        <input type="number" id="hours" min="0" value="0" class="mmInput2">
+                    </div>
+                </div>
+                <div>
+                    <label for="minutes">Minutes: </label>
+                    <div class="input-box">
+                        <input type="number" id="minutes" min="0" value="0" class="mmInput1">
+                    </div>
+                </div>
+                <div>
+                    <label for="seconds">Seconds: </label>
+                    <div class="input-box">
+                        <input type="number" id="seconds" min="0" value="0" class="mmInput1">
+                    </div>
+                </div>
+            </div>
+            <button id="backToFifthPageButton" class="back-button" onclick="backToFifthPage()">Previous</button>
+            <button id="startSeventhPageButton" class="Next-button" onclick="goToSeventhPage()">Next</button>
+            
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Create a hidden overlay for the seventh page -->
+    <div id="seventhPageOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div id="sixthPage">
+                <h1 id="timeTitle">Time</h1>
+                <p id="countdownSeventh"></p>
+                <!-- <button id="pauseCountdownButton" onclick="pauseCountdown()" class="pause-icon" >
+                    <img src="images/Pause.png" alt="Pause Icon" />
+                    Pause
+                </button>
+                <button id="resumeCountdownButton" onclick="resumeCountdown()" class="resume-icon" style="display: none;">
+                    <img src="images/Resume.png" alt="Resume Icon" />
+                    Resume
+                </button> -->
+                <button id="startStopwatchButton"  onclick="startCountdown()" class="start-icon">
+                    <img src="images/Start.png" alt="restart Icon" />
+                Start
+                </button>
+                <button id="resetStopwatchButton" onclick="resetStopwatch()" class="reset-icon">
+                    <img src="images/Reset.png" alt="restart Icon" />
+                    Reset
+                </button>
+                <button id="backToSixthPageButton" class="back-button" onclick="backToSixthPage()">Previous</button>
+                <button id="backToSecondPageButton" class="restart-button" onclick="backToSecondPage()">Restart
+                </button>
+            </div>
+
+            <!-- code foe dialog box -->
+            <div id="customDialogSeventhPage" class="custom-dialog">
+                <div class="dialog-content">
+                    <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+                    <h2 class="dialog-title2">Job Done</h2>
+                    <button id="confirmDialogSeventhPage" class="dialog-confirm-button"
+                        onclick="closeCustomDialog()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
