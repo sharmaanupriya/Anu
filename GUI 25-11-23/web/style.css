@@ -1,0 +1,2078 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+#container {
+    text-align: center;
+}
+
+#logo {
+    width: 650px;
+    /* Adjust the width of the logo as needed */
+    height: auto;
+    /* Maintain the aspect ratio */
+    margin: 0 auto;
+    /* Center the logo horizontally */
+}
+
+/* Add styles for dark mode */
+.dark-mode {
+    background-image: url('images/bg-image-dark.png');
+    /* Replace 'images/bg-image-dark.png' with the actual path to your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+.dark-mode .overlay-content {
+    background-image: url('images/bg-image-dark.png');
+    /* Replace 'images/bg-image-dark.png' with the actual path to your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.dark-mode body {
+    font-family: Arial, sans-serif;
+}
+
+.dark-mode h2 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.dark-mode p {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.dark-mode p img {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* Align the image with the text vertically */
+}
+
+.dark-mode .image-with-margin {
+    margin: 20;
+    /* Adjust the margin as needed */
+}
+
+.dark-mode .dark-light-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark-mode .dark-light-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+/* Style the overlay container */
+.dark-mode .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Style the content inside the overlay */
+.dark-mode .overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Make the overlay match the size of the first page */
+.dark-mode .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Apply the same styles to the input box as the third page */
+.dark-mode .mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.dark-mode .position-display {
+    bottom: 400px;
+    width: 50%;
+    padding: 20px;
+}
+
+.dark-mode .system-name {
+    font-size: 65px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    /* Change the font family */
+    background: linear-gradient(45deg, #155a87, #743f89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the input containers */
+.dark-mode .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    /* Add margin to space them out */
+}
+
+/* Apply the same styles to the input boxes as before */
+.dark-mode .mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.dark-mode body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.dark-mode .input-container {
+    background: linear-gradient(to bottom, #fff, rgb(224, 221, 221));
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.dark-mode .input-container-currentP {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 50%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the container */
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Slightly larger and softer box shadow */
+    display: inline-block;
+    text-align: center;
+    /* Center the text horizontally */
+    color: #fff;
+    /* White text color for better readability */
+    width: 500px;
+    /* Set a fixed width to control the container's size */
+    display: inline-block;
+}
+
+.dark-mode .input-container-focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 40%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+    width: 500px;
+}
+
+.dark-mode .mmInputf {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+
+}
+
+.dark-mode #focusTitel {
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode .input-container {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 55%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 50px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+    width: 35%;
+}
+
+.dark-mode .input-containerlaser {
+    top: 15%;
+}
+
+.dark-mode .input-containerlaserC {
+    top: 35%;
+}
+
+.dark-mode .input-containerlaserD {
+    top: 55%;
+}
+
+.dark-mode .input-containerheight {
+    top: 75%;
+}
+
+.dark-mode .mmInputB {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+
+}
+
+.dark-mode #setParameter {
+    color: rgb(255, 123, 0);
+}
+
+
+.dark-mode .input-containertime {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 50%;
+    width: 40%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+}
+
+
+.dark-mode .mmInput1 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.dark-mode .mmInput2 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.dark-mode #setTimer {
+    color: rgb(255, 123, 0);
+}
+
+
+
+.dark-mode .input-box {
+    display: inline;
+}
+
+.dark-mode label {
+    margin-right: 10px;
+}
+
+.dark-mode .back-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode .back-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .restart-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .hidden {
+    display: none;
+}
+
+.dark-mode .Next-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .hidden {
+    display: none;
+}
+
+.dark-mode #secondPage {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    max-width: 80%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 15%;
+    /* Adjust the percentage as needed */
+    height: 80vh;
+    /* Adjust as needed */
+    position: fixed;
+}
+
+.dark-mode .home-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 45%;
+    left: 50%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .home-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .home-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .home-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .home-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Home-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .setting-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 45%;
+    left: 20%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .setting-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .setting-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .setting-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .setting-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Setting-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .terminal-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 40px;
+    top: 45%;
+    left: 80%;
+    position: fixed;
+    margin: 20px;
+    padding: 40px 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.dark-mode .terminal-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .terminal-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .terminal-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .terminal-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Terminal-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .styled-button {
+    position: absolute;
+    top: 60px;
+}
+
+.dark-mode .start-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    position: fixed;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .start-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.dark-mode .start-icon span {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.dark-mode .start-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+
+
+.dark-mode #resetStopwatchButton {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: none;
+    position: fixed;
+    top: 70%;
+    right: 25%;
+    transform: translate(-50%, -50%);
+    /* Center the button */
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode #resetStopwatchButton:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+
+.dark-mode .reset-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark-mode .reset-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .reset-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode #goHome {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    /* Smaller font size */
+    background-color: #2e8b57;
+    /* Green background */
+    color: #fff;
+    /* White text color */
+    padding: 10px 15px;
+    /* Slightly smaller padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center-align text */
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Add a shadow */
+}
+
+.custom-h1-1 {
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.dark-mode .custom-h1-2 {
+    position: absolute;
+    top: 20%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    /* Adjust the font size */
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 5px 10px;
+    /* Adjust padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+.dark-mode #countdownSeventh {
+    font-size: 100px;
+    position: fixed;
+    top: 30%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the element */
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode #timeTitle {
+    color: rgb(255, 123, 0);
+}
+
+
+/* Dialog box */
+.dark-mode .custom-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.dark-mode .dialog-content {
+    background: rgba(255, 255, 255, 0.151);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode .dialog-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(41, 40, 40, 0.459)
+        /* Close button color */
+}
+
+.dark-mode .dialog-close-button:hover {
+    color: #000;
+    /* Close button color on hover */
+}
+
+.dark-mode .dialog-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.dark-mode .dialog-title2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.dark-mode .dialog-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    /* Add this to center the text horizontally */
+}
+
+.dark-mode .dialog-confirm-button {
+    padding: 10px 20px;
+    color: rgb(255, 123, 0);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode .dialog-confirm-button:focus {
+    outline: none;
+}
+
+
+.dark-mode #settingPageOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+.dark-mode #settingPage {
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 80%;
+    margin: 10%;
+    /* Reduce the left margin to 10% */
+    padding: 30px;
+    /* Increase the padding to 30px for better spacing */
+    border-radius: 15px;
+    /* Increase border radius for a smoother look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    /* Enhance the box shadow for depth */
+    color: #ffffff;
+    /* Use a slightly darker text color for better contrast */
+    font-family: "Arial", sans-serif;
+}
+
+.dark-mode #settingsTitle {
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode .setting-controls select#comPortDropdown,
+.dark-mode .setting-controls select#baudRateDropdown {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.dark-mode .setting-controls label {
+    display: block;
+    width: auto;
+    /* Set width to auto for dynamic width based on content */
+    text-align: left;
+    /* Align the text to the left within the label */
+    margin-bottom: 5px;
+    font-size: 20px;
+    /* Adjust the font size as needed */
+}
+
+
+.dark-mode .setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.dark-mode select,
+button {
+    padding: 12px;
+    /* Add a different border color for buttons and select elements */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 22px;
+    /* Increase the font size for better readability */
+    margin-top: 20px;
+    /* Add more margin to the top of buttons to create space between dropdowns and buttons */
+}
+
+.dark-mode button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode #data-display {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+.dark-mode #terminal {
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 80%;
+    margin: auto;
+    /* Updated to center horizontally */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #000000;
+    font-family: "Arial", sans-serif;
+}
+
+.dark-mode #terminalTitle {
+    color: rgb(255, 123, 0);
+}
+
+
+
+/*start light mode */
+
+body {
+    background-image: url('images/bg-image-light.png');
+    background-size: 100% 100%;
+    /* You can try using 100% 100% to stretch the image to cover the entire background */
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay-content {
+    background-image: url('images/bg-image-light.png');
+    background-size: contain;
+    /* You can try contain to ensure the entire image is visible without cropping */
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: rgb(7, 7, 63);
+    margin-bottom: 5px;
+}
+
+p {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+p img {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* Align the image with the text vertically */
+}
+
+.image-with-margin {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 20;
+    /* Align the image with the text vertically */
+}
+
+
+.dark-light-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark-light-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+
+/* Style the overlay container */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Style the content inside the overlay */
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Make the overlay match the size of the first page */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Apply the same styles to the input box as the third page */
+.mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.position-display {
+    bottom: 400px;
+    width: 50%;
+    padding: 20px;
+}
+
+.system-name {
+    font-size: 65px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    /* Change the font family */
+    background: linear-gradient(45deg, #155a87, #743f89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the input containers */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    /* Add margin to space them out */
+}
+
+/* Apply the same styles to the input boxes as before */
+.mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.input-container {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.input-container-currentP {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the container */
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Slightly larger and softer box shadow */
+    display: inline-block;
+    text-align: center;
+    /* Center the text horizontally */
+    color: #ffffff;
+    /* White text color for better readability */
+    width: 500px;
+    /* Set a fixed width to control the container's size */
+    display: inline-block;
+}
+
+.input-container-focus {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 40%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 500px;
+}
+
+.mmInputf {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+
+}
+
+#focusTitel {
+    color: #070736;
+}
+
+.input-container {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 55%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 50px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 35%;
+}
+
+.input-containerlaser {
+    top: 15%;
+}
+
+.input-containerlaserC {
+    top: 35%;
+}
+
+.input-containerlaserD {
+    top: 55%;
+}
+
+.input-containerheight {
+    top: 75%;
+}
+
+.mmInputB {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+
+}
+
+#setParameter {
+    color: #070736;
+}
+
+
+.input-containertime {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    width: 40%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
+
+
+.mmInput1 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.mmInput2 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+#setTimer {
+    color: #070736;
+}
+
+
+
+.input-box {
+    display: inline;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.back-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+.back-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.restart-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+.Next-button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 40px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    /* Add margin to create space between buttons */
+}
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+#secondPage {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    max-width: 80%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 15%;
+    /* Adjust the percentage as needed */
+    height: 80vh;
+    /* Adjust as needed */
+    position: fixed;
+}
+
+.home-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 45%;
+    left: 50%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.home-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.home-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.home-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.home-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Home-hover-light.png');
+    transition: transform 0.3s;
+}
+
+.setting-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 45%;
+    left: 20%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.setting-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.setting-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.setting-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.setting-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Setting-hover-light.png');
+    transition: transform 0.3s;
+}
+
+.terminal-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px;
+    top: 45%;
+    left: 80%;
+    position: fixed;
+    margin: 20px;
+    padding: 40px 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.terminal-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.terminal-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.terminal-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.terminal-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Terminal-hover-light.png');
+    transition: transform 0.3s;
+}
+
+.styled-button {
+    position: absolute;
+    top: 60px;
+}
+
+.start-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.start-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.start-icon span {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.start-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.start-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Start-hover-light.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.reset-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: fixed;
+    top: 70%;
+    right: 25%;
+    transform: translate(-50%, -50%);
+    /* Center the button */
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.reset-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.reset-icon span {
+    margin-top: 5px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.reset-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.reset-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Reset-hover-light.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+#goHome {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    /* Smaller font size */
+    background-color: #2e8b57;
+    /* Green background */
+    color: #fff;
+    /* White text color */
+    padding: 10px 15px;
+    /* Slightly smaller padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center-align text */
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Add a shadow */
+}
+
+.custom-h1-1 {
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.custom-h1-2 {
+    position: absolute;
+    top: 20%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    /* Adjust the font size */
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 5px 10px;
+    /* Adjust padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+#countdownSeventh {
+    font-size: 100px;
+    position: fixed;
+    top: 30%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the element */
+    color: rgb(255, 123, 0);
+}
+
+#timeTitle {
+    color: #070736;
+}
+
+
+/* Dialog box */
+.custom-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.dialog-content {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #000000;
+    position: relative;
+}
+
+.dialog-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(41, 40, 40, 0.459)
+        /* Close button color */
+}
+
+.dialog-close-button:hover {
+    color: #000;
+    /* Close button color on hover */
+}
+
+.dialog-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.dialog-title2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.dialog-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.dialog-confirm-button {
+    padding: 10px 20px;
+    color: rgb(255, 123, 0);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-confirm-button:focus {
+    outline: none;
+}
+
+
+#settingPageOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+#settingPage {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 10%;
+    /* Reduce the left margin to 10% */
+    padding: 30px;
+    /* Increase the padding to 30px for better spacing */
+    border-radius: 15px;
+    /* Increase border radius for a smoother look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    /* Enhance the box shadow for depth */
+    color: #ffffff;
+    /* Use a slightly darker text color for better contrast */
+    font-family: "Arial", sans-serif;
+}
+
+#settingsTitle {
+    color: #070736;
+}
+
+.setting-controls select#comPortDropdown,
+.setting-controls select#baudRateDropdown {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 22px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    color: #070736;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.setting-controls label {
+    display: block;
+    width: auto;
+    /* Set width to auto for dynamic width based on content */
+    text-align: left;
+    /* Align the text to the left within the label */
+    margin-bottom: 5px;
+    font-size: 20px;
+    /* Adjust the font size as needed */
+}
+
+
+.setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+select,
+button {
+    padding: 12px;
+    /* Add a different border color for buttons and select elements */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 22px;
+    /* Increase the font size for better readability */
+    margin-top: 20px;
+    /* Add more margin to the top of buttons to create space between dropdowns and buttons */
+}
+
+button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+#data-display {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+#terminal {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: auto;
+    /* Updated to center horizontally */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+}
+
+#terminalTitle {
+    color: #070736;
+}
